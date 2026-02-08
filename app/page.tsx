@@ -35,7 +35,7 @@ export default function PenjagaanApp() {
     { name: "Mako Satpol PP Luwu Timur", lat: -2.6050, lng: 121.1300 },
     { name: "BBG Bundaran Batara Guru", lat: -2.5796, lng: 121.1365 },
     { name: "Rujab Sekda", lat: -2.6130, lng: 121.1380 },
-    { name: "Kediaman Bupati", lat: -2.6140, lng: 121.1390 }
+    { name: "Kediaman Bupati", lat: -2.6133788, lng: 121.1067481 }
   ];
 
   const daftarRegu = ["--- Pilih Regu ---", "Regu 1", "Regu 2", "Regu 3", "Regu 4"];
@@ -64,7 +64,7 @@ export default function PenjagaanApp() {
 
   const handleCapture = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (jarak !== null && jarak > 500) {
-      alert(`❌ TERLALU JAUH! Jarak Anda ${jarak}m. Maksimal 500m dari lokasi.`);
+      alert(`❌ JARAK TERLALU JAUH! Jarak Anda ${jarak}m. Maksimal 500m.`);
       return;
     }
     const file = e.target.files?.[0];
@@ -77,7 +77,7 @@ export default function PenjagaanApp() {
 
   const kirimLaporan = async () => {
     if (!nama || !regu || !lokasi || !photo) {
-      alert("⚠️ Lengkapi semua data dan foto di lokasi!");
+      alert("⚠️ Mohon lengkapi semua data dan foto!");
       return;
     }
     const url = "https://script.google.com/macros/s/AKfycby7rlnUH8vBabUt1_P6plh0M7fA34uzLGCgR53OEPLjFANugRDBtTsMHsTftNXGOWhX/exec";
@@ -88,6 +88,7 @@ export default function PenjagaanApp() {
         body: JSON.stringify({ nama, regu, danru, lokasi, foto: photo, jarak: `${jarak}m` })
       });
       alert("✅ LAPORAN BERHASIL TERKIRIM!");
+      setPhoto(null);
     } catch (e) {
       alert("❌ GAGAL MENGIRIM");
     }
@@ -98,7 +99,7 @@ export default function PenjagaanApp() {
       <div style={{ backgroundColor: '#1e3a8a', color: 'white', padding: '15px', borderRadius: '15px', textAlign: 'center', marginBottom: '15px' }}>
         <h2 style={{ margin: 0, fontSize: '18px' }}>PENJAGAAN SATPOL PP LUTIM</h2>
         <p style={{ fontSize: '12px', marginTop: '5px' }}>{waktu}</p>
-        {jarak !== null && lokasi !== daftarAset[0].name && (
+        {jarak !== null && lokasi !== "--- Pilih Lokasi ---" && (
           <div style={{ marginTop: '10px', padding: '8px', borderRadius: '8px', fontSize: '13px', backgroundColor: jarak <= 500 ? '#10b981' : '#ef4444' }}>
             📍 Jarak: {jarak} meter {jarak <= 500 ? '(Aman)' : '(Terlalu Jauh)'}
           </div>
