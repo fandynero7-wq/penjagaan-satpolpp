@@ -25,17 +25,17 @@ export default function PenjagaanApp() {
   const [userCoords, setUserCoords] = useState<{lat: number, lng: number} | null>(null);
   const [jarak, setJarak] = useState<number | null>(null);
 
-  const daftarAset = [
+ const daftarAset = [
     { name: "--- Pilih Lokasi ---", lat: 0, lng: 0 },
-    { name: "Kantor Bupati", lat: -2.6074, lng: 121.1332 },
-    { name: "Kantor DPRD", lat: -2.6080, lng: 121.1340 },
-    { name: "Rujab Bupati", lat: -2.6100, lng: 121.1350 },
-    { name: "Rujab Wakil Bupati", lat: -2.6110, lng: 121.1360 },
-    { name: "Rujab Ketua DPRD", lat: -2.6120, lng: 121.1370 },
-    { name: "Mako Satpol PP Luwu Timur", lat: -2.6050, lng: 121.1300 },
-    { name: "BBG Bundaran Batara Guru", lat: -2.5796, lng: 121.1365 },
-    { name: "Rujab Sekda", lat: -2.6130, lng: 121.1380 },
-    { name: "Kediaman Bupati", lat: -2.6133788, lng: 121.1067481 }
+    { name: "Kantor Bupati", lat: -2.607445, lng: 121.133224 },
+    { name: "Kantor DPRD", lat: -2.608112, lng: 121.133985 },
+    { name: "Rujab Bupati", lat: -2.610234, lng: 121.135112 },
+    { name: "Rujab Wakil Bupati", lat: -2.611123, lng: 121.136001 },
+    { name: "Rujab Ketua DPRD", lat: -2.612234, lng: 121.137112 },
+    { name: "Mako Satpol PP Luwu Timur", lat: -2.605051, lng: 121.130521 }, // Update Mako
+    { name: "BBG Bundaran Batara Guru", lat: -2.579600, lng: 121.136500 },
+    { name: "Rujab Sekda", lat: -2.613123, lng: 121.138234 },
+    { name: "Kediaman Bupati", lat: -2.6133788, lng: 121.1067481 } // Sesuai link Bapak kemarin
   ];
 
   const daftarRegu = ["--- Pilih Regu ---", "Regu 1", "Regu 2", "Regu 3", "Regu 4"];
