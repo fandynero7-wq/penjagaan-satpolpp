@@ -1,16 +1,15 @@
 {
-  "name": "Penjagaan Satpol PP",
-  "short_name": "Penjagaan",
-  "description": "Aplikasi Penjagaan Aset Daerah Luwu Timur",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e3a8a",
+  "name": "Penjagaan Aset Luwu Timur",
+  "short_name": "SatpolPP Lutim",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/1067/1067357.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a"
 }
